@@ -1,0 +1,18 @@
+{
+  "expo": {
+    "sdkVersion": "27.0.0",
+    "name": "News Wire",
+    "slug": "news-app-aboos",
+    "description":"Latest World Hot News Application Developed For Aboobakkar P S ",
+    "privacy": "public",
+    "icon":"https://s3.us-east-2.amazonaws.com/wuyers/profile/aboo.png",
+    "androidStatusBar": {
+      "backgroundColor":"#339933"
+    },
+    "version":"0.0.1",
+    "android": {
+      "package": "com.aboo.newswireapp",
+      "versionCode": 1
+    }
+  }
+}
