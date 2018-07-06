@@ -31,7 +31,7 @@ export default class App extends Component {
     return (
       <View style={styles.container} >
         <Text style={styles.h2text}>
-          News Wire
+          Highlights
         </Text>
           <FlatList
           data={this.state.users}
@@ -41,10 +41,12 @@ export default class App extends Component {
             <Image source={{ uri: item.urlToImage }}
                     style={{ height: 150, width: IMAGE_SIZE }}
                     borderRadius={5}/>
-            <Text style={styles.name}>{item.title}</Text>
-            <Text style={styles.email}>{item.description}</Text>
-            <Text style={styles.date}>{moment(item.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</Text>
-            <Text style={styles.email}>{item.source.name}</Text>
+            <Text style={styles.title}>{item.title}</Text>
+            <Text style={styles.description}>{item.description}</Text>
+            <View style={styles.horizontalHolder}>
+              <Text style={styles.source}>Source:{item.source.name}</Text>
+              <Text style={styles.date}>{moment(item.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</Text>
+            </View>
           </View>
           }
           keyExtractor={item => item.publishedAt}
@@ -57,7 +59,6 @@ export default class App extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    marginTop:10,
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
@@ -65,22 +66,42 @@ const styles = StyleSheet.create({
   },
   h2text: {
     marginTop: 10,
-    fontSize: 36,
-    fontWeight: 'bold',
+    fontSize: 18,
+    fontWeight: '900',
+  },
+  horizontalHolder:{
+    borderTopWidth:0.6,
+    borderTopColor:'rgba(51, 51, 51, 1)',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    alignItems:'center'
   },
   flatview: {
     justifyContent: 'center',
-    padding:7,
+    padding:5,
     borderRadius: 5,
-    borderWidth:0.8,
+    borderWidth:1,
     borderColor:'rgba(50, 149, 240,1)',
     marginBottom:10,
   },
-  name: {
-    fontSize: 18
+  title: {
+    fontSize: 15,
+    fontWeight:'900',
+    color:'rgba(0,0,0,1)',
   },
-  email: {
-    color: 'red'
+  description: {
+    color: 'rgba(51, 51, 51, 1)',
+    fontSize:12,
+    fontWeight:'400',
+    marginBottom:5
+  },
+  source:{
+    fontSize:12,
+    color:'rgba(140,140,140,1)',
+  },
+  date:{
+    fontSize:12,
+    color:'#e67e22',
   }
   
 });
