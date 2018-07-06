@@ -10,6 +10,7 @@ import {
   Dimensions,
   Image
 } from 'react-native';
+import moment from 'moment';
 import ajax from './service/FetchData';
 const SCREEN_WIDTH = Dimensions.get('window').width;
 const SCREEN_HEIGHT = Dimensions.get('window').height;
@@ -42,6 +43,8 @@ export default class App extends Component {
                     borderRadius={5}/>
             <Text style={styles.name}>{item.title}</Text>
             <Text style={styles.email}>{item.description}</Text>
+            <Text style={styles.date}>{moment(item.publishedAt).format('MMMM Do YYYY, h:mm:ss a')}</Text>
+            <Text style={styles.email}>{item.source.name}</Text>
           </View>
           }
           keyExtractor={item => item.publishedAt}
