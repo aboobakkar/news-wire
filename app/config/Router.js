@@ -4,6 +4,7 @@ import { createDrawerNavigator, createStackNavigator, createTabNavigator } from 
 import { MaterialIcons } from '@expo/vector-icons';
 import Home from '../Home'
 import Technology from '../Technology'
+import Aljaseera from '../AlJaseera'
 const TabsInDrawer = createDrawerNavigator({
     Home: {
       screen: Home,
@@ -24,7 +25,22 @@ const TabsInDrawer = createDrawerNavigator({
       screen: Technology,
       navigationOptions: {
         drawer: () => ({
-          label: 'Technology News',
+          label: 'TechCrunch',
+          icon: ({ tintColor }) => (
+            <MaterialIcons
+              name="filter-2"
+              size={24}
+              style={{ color: tintColor }}
+            />
+          ),
+        }),
+      },
+    },
+    Aljaseera: {
+      screen: Aljaseera,
+      navigationOptions: {
+        drawer: () => ({
+          label: 'Al Jaseera',
           icon: ({ tintColor }) => (
             <MaterialIcons
               name="filter-2"

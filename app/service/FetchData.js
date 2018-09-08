@@ -4,27 +4,40 @@ const ALJASEERA_EN = 'https://newsapi.org/v2/top-headlines?sources=al-jazeera-en
 const HACKERNEWS = 'https://newsapi.org/v2/top-headlines?sources=hacker-news&apiKey=03165693d22644ada4e7c16a17df4e9a'
 export default {
     async fetchUsers(type) {
-if(type=='tech'){
-    try {
-        let response = await fetch(TECHCRUNCH);
-        let responseJsonData = await response.json();
-        return responseJsonData;
-    }
-catch(e) {
-    console.log(e)
-}
+        if(type=='tech'){
+            try {
+                let response = await fetch(TECHCRUNCH);
+                let responseJsonData = await response.json();
+                return responseJsonData;
+            }
+        catch(e) {
+            console.log(e)
+        }
 
-}else{
-    try {
-        let response = await fetch(TOP_HEADLINES);
-        let responseJsonData = await response.json();
-        return responseJsonData;
-    }
-catch(e) {
-    console.log(e)
-}
+        }else if(type=='aljaseera'){
 
-}
+            try {
+                let response = await fetch(ALJASEERA_EN);
+                let responseJsonData = await response.json();
+                return responseJsonData;
+            }
+        catch(e) {
+            console.log(e)
+        }
+
+
+            }else{
+
+                try {
+                    let response = await fetch(TOP_HEADLINES);
+                    let responseJsonData = await response.json();
+                    return responseJsonData;
+                }
+            catch(e) {
+                console.log(e)
+            }
+
+            }
 
     }
 }

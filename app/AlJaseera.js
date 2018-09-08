@@ -22,7 +22,7 @@ export default class Home extends Component {
   }
 
   async componentDidMount() {
-    const users = await ajax.fetchUsers('tech');
+    const users = await ajax.fetchUsers('aljaseera');
     this.setState({users:users.articles});
   }
 
@@ -31,7 +31,7 @@ export default class Home extends Component {
     return (
       <View style={styles.container} >
         <Text style={styles.h2text}>
-          Tech Crunch
+          Al Jaseera
         </Text>
           <FlatList
           data={this.state.users}
