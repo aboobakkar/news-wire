@@ -26,7 +26,18 @@ export default {
         }
 
 
-            }else{
+            }else if(type=='hacker'){
+                try {
+                    let response = await fetch(HACKERNEWS);
+                    let responseJsonData = await response.json();
+                    return responseJsonData;
+                }
+            catch(e) {
+                console.log(e)
+            }
+            }
+            
+            else{
 
                 try {
                     let response = await fetch(TOP_HEADLINES);
