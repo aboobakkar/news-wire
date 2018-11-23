@@ -31,7 +31,7 @@ export default class Home extends Component {
     return (
       <View style={styles.container} >
         <Text style={styles.h2text}>
-          Al Jaseera
+         Hacker News
         </Text>
           <FlatList
           data={this.state.users}

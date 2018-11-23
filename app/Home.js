@@ -62,7 +62,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-    paddingHorizontal:10
+    marginHorizontal:5
   },
   h2text: {
     marginTop: 10,
